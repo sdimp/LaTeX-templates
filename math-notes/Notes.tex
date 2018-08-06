@@ -1,0 +1,175 @@
+\documentclass[10.5pt]{article}
+
+%%% EDIT THESE AS APPROPRIATE
+\newcommand\deets{Insert Name}								% name
+\newcommand\course{Course Name}								% course
+\newcommand\semester{Semester}           					% semester
+
+%%% TITLE
+\title{\textsc{\course}}
+\author{\deets}
+\date{Last updated: \today}
+
+%%% DOCUMENT PROPERTIES
+\usepackage[margin = 1.5in]{geometry}
+
+% Header
+\usepackage{fancyhdr}
+\fancyhf{} % sets both header and footer to nothing
+%\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\headheight 35pt
+\lhead{\textsc{\course}}
+\chead{}
+\rhead{\textsc{\semester}}
+\lfoot{}
+\cfoot{\small\thepage}
+\rfoot{}
+\headsep 1.5em
+
+%\def\contentsname{\empty}			% No "Contents" heading
+
+%%% PACKAGES
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd,mathrsfs,mathtools}	
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{parskip}
+\usepackage{subfiles}
+\usepackage{pagecolor}
+\usepackage{tcolorbox}
+\usepackage{tikz, tikz-cd}
+\usepackage{hyperref}
+\usepackage{mathdots}
+
+% Hyperlink Setup
+\hypersetup{colorlinks = true, 
+urlcolor=blue!50!red,
+linkcolor=black,
+bookmarks=true,
+bookmarksopen=false,
+pdftitle={Advanced Abstract Algebra},
+pdfauthor={Shiv Nadimpalli}} 
+
+% Images path
+\graphicspath{{images/}{../images/}}
+
+%%% MATH ENVIRONMENTS
+\tcbuselibrary{theorems}
+\tcbuselibrary{breakable}
+\tcbuselibrary{skins}
+\usepackage{cleveref}
+
+\tcbset{
+defstyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
+arc=0mm, colback=blue!5!white,colframe=blue!75!black},
+theostyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
+colback=red!10!white,colframe=red!75!black},
+}
+
+%%% Definition: YELLOW
+\newtcbtheorem[number within=subsection,crefname={definition}{definitions}]{Definition}{Definition}{defstyle}{def}
+
+\newtcbtheorem[use counter from=Definition]{definition}{Definition}{theorem style=break,enhanced,colframe=blue!50!black,colback=yellow!20!white,coltitle=red!50!black,fonttitle=\upshape\bfseries,fontupper=\itshape,boxrule=0.1pt, sharpish corners, breakable, terminator sign = {}}{theo}
+
+%%% Theorem: RED
+\newtcbtheorem[use counter from=Definition,crefname={theorem2}{theorems}]{Theorem}{Theorem}{theostyle}{theo}
+
+\newtcbtheorem[use counter from=Definition]{theorem}{Theorem}{theorem style=break,colback=red!10!white,coltitle=red!50!black,fonttitle=\upshape\bfseries,fontupper=\itshape,drop fuzzy shadow=red!50!black!50!white,boxrule=0.1pt, sharpish corners, breakable, description delimiters={}{}, separator sign colon, terminator sign={}}{theo}
+
+%%% Corollary: BROWN
+\newtcbtheorem[use counter from=Definition]{corollary}{Corollary}{theorem style=break,colback=brown!10!white,coltitle=brown!50!black,fonttitle=\upshape\bfseries,fontupper=\itshape,drop fuzzy shadow=brown!50!black!50!white,boxrule=0.1pt, sharpish corners, breakable, terminator sign={}}{theo}
+
+%%% Lemma: GREEN
+\newtcbtheorem[use counter from=Definition,crefname={lemma}{lemmas}]{Lemma}{Lemma}{theostyle}{lem}
+
+\newtcbtheorem[use counter from=Definition]{lemma}{Lemma}{theorem style=break,colback=green!10!white,coltitle=green!10!black,fonttitle=\upshape\bfseries,fontupper=\itshape,drop fuzzy shadow=green!50!black!50!white, breakable, boxrule=0.1pt, sharpish corners, terminator sign={}}{theo}
+
+%%% Proposition: BLUE
+\newtcbtheorem[use counter from=Definition]{proposition}{Proposition}{theorem style=break, enhanced,colback=blue!10!white,coltitle=blue!50!black,fonttitle=\upshape\bfseries,fontupper=\itshape,boxrule=0.1pt, breakable,  sharpish corners, terminator sign={}}{theo}
+
+%%% Example: GRAY
+\newtcbtheorem[use counter from=Definition]{example}{Example}{theorem style=break,colback=gray!10!white,coltitle=gray!50!black,fonttitle=\upshape\bfseries, breakable, boxrule=0.1pt, sharpish corners, terminator sign={}}{theo}
+
+\theoremstyle{plain}
+
+%%% Proof
+\tcolorboxenvironment{proof}{blanker,breakable,left=5mm,before skip=3pt,after skip=10pt,borderline west={0.75mm}{0pt}{black} }
+
+%%% NEW COMMANDS
+\newcommand{\blankpage}{\newpage\hbox{}\newpage}						 	% Inserts a blank page
+\newcommand{\boxy}[1]{\fbox{\parbox{\textwidth}{#1}}} 					% Boxes stuff 
+
+\newcommand{\qstn}{\textit{Question.\space}}
+\newcommand{\exer}{\textit{Exercise.\space}}
+\newcommand{\claim}{\textbf{Claim.\space}}
+
+\newcommand{\CC}{\mathbb C}
+\newcommand{\FF}{\mathbb F}
+\newcommand{\NN}{\mathbb N}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\OO}{\mathcal{O}}
+\renewcommand{\o}{\mathscr{O}}
+\newcommand{\BB}{\mathcal{B}}
+
+\newcommand{\GL}{\text{GL}}
+\newcommand{\im}{\text{Im\ }}
+
+\newcommand{\aut}[1]{\text{Aut}(#1)}
+\newcommand{\inn}[1]{\text{Inn}(#1)}
+\newcommand{\sym}[1]{\text{Sym}(#1)}
+\renewcommand{\hom}[1]{\text{Hom}(#1)}
+\newcommand{\id}{\text{Id}}
+\newcommand{\sylow}[2]{\text{Syl}_{#1}(#2)}
+
+\newcommand{\norm}{\trianglelefteq}
+\newcommand{\propnorm}{\triangleleft}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\tleq}[1]{\ensuremath{\stackrel{\text{#1}}{\leq}}}
+\newcommand{\tgeq}[1]{\ensuremath{\stackrel{\text{#1}}{\geq}}}
+\newcommand{\tless}[1]{\ensuremath{\stackrel{\text{#1}}{<}}}
+\newcommand{\tgreater}[1]{\ensuremath{\stackrel{\text{#1}}{>}}}
+
+\newcommand{\tnorm}[1]{\ensuremath{\stackrel{\text{#1}}{\trianglelefteq}}}
+\newcommand{\tpropnorm}[1]{\ensuremath{\stackrel{\text{#1}}{\triangleleft}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% BEGIN DOCUMENT %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{document}
+
+%%% TITLE PAGE
+
+\maketitle
+\newpage
+
+%%% TABLE OF CONTENTS
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+
+
+%%% MAIN MATTER
+\setcounter{section}{-1}
+\section{Hello!}
+Introduction :) 
+
+\subsection*{Notation}
+Keep a running track of notation used. 
+
+\newpage
+\part{Sample Part}\thispagestyle{empty}
+\newpage
+\section{Sample Section}
+\subfile{sections/sample-section}
+
+
+\end{document}

@@ -1,0 +1,109 @@
+\documentclass[10.5pt]{article}
+
+%%% DOCUMENT PROPERTIES
+\usepackage[margin = 1.5in]{geometry}
+
+%%% PACKAGES
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd,mathrsfs,mathtools}	
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{parskip}
+\usepackage{subfiles}
+\usepackage{pagecolor}
+\usepackage{tcolorbox}
+\usepackage{tikz, tikz-cd}
+\usepackage{hyperref}
+\usepackage{mathdots}
+
+% HYPERLINK SETUP
+\hypersetup{colorlinks = true, 
+urlcolor=blue!50!red,
+linkcolor=black,
+bookmarks=true,
+bookmarksopen=false,
+pdfauthor={Shiv Nadimpalli}} 
+
+%%% MATH ENVIRONMENTS
+\theoremstyle{definition}
+
+\makeatletter
+\def\thm@space@setup{
+  \thm@preskip=\parskip
+  \thm@postskip=\thm@preskip 
+  }
+\makeatother
+
+\AtBeginEnvironment{proof}{\vspace{-18pt}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{answer}[theorem]{Answer}
+\newtheorem{idea}[theorem]{Idea}
+\newtheorem{claim}[theorem]{Claim}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\end{proof}}
+
+
+%%% NEW COMMANDS
+
+% Insert a blank page
+\newcommand{\blankpage}{\newpage\hbox{}\newpage}	
+
+% Boxing stuff
+\newcommand{\boxy}[1]{\fbox{\parbox{\textwidth}{#1}}} 
+
+% Symbols and things
+\newcommand{\CC}{\mathbb C}
+\newcommand{\FF}{\mathbb F}
+\newcommand{\NN}{\mathbb N}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\OO}{\mathcal{O}}
+\renewcommand{\o}{\mathscr{O}}
+\newcommand{\BB}{\mathcal{B}}
+
+\newcommand{\GL}{\text{GL}}
+\newcommand{\im}{\text{Im\ }}
+
+\newcommand{\aut}[1]{\text{Aut}(#1)}
+\newcommand{\inn}[1]{\text{Inn}(#1)}
+\newcommand{\sym}[1]{\text{Sym}(#1)}
+\renewcommand{\hom}[1]{\text{Hom}(#1)}
+\newcommand{\id}{\text{Id}}
+\newcommand{\sylow}[2]{\text{Syl}_{#1}(#2)}
+
+\newcommand{\norm}{\trianglelefteq}
+\newcommand{\propnorm}{\triangleleft}
+
+\newcommand{\tleq}[1]{\ensuremath{\stackrel{\text{#1}}{\leq}}}
+\newcommand{\tgeq}[1]{\ensuremath{\stackrel{\text{#1}}{\geq}}}
+\newcommand{\tless}[1]{\ensuremath{\stackrel{\text{#1}}{<}}}
+\newcommand{\tgreater}[1]{\ensuremath{\stackrel{\text{#1}}{>}}}
+
+\newcommand{\tnorm}[1]{\ensuremath{\stackrel{\text{#1}}{\trianglelefteq}}}
+\newcommand{\tpropnorm}[1]{\ensuremath{\stackrel{\text{#1}}{\triangleleft}}}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}

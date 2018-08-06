@@ -1,0 +1,53 @@
+\documentclass[../AAL-Notes.tex]{subfiles}
+
+\begin{document}
+
+The contents of this section are in the corresponding file (\texttt{sample-section.tex}) in the \texttt{sections} folder. I'm using the \texttt{subfile} package to organize the document.  
+
+All images go into the \texttt{images} folder. Here's a sample:
+
+\begin{center}
+	\includegraphics[scale = 0.45]{images/barney}
+\end{center}
+
+
+\subsection{Sample Math Environments}
+You can edit the appearance of these in \texttt{main.tex}. The package used is \texttt{tcolorbox} whose documentation can be found easily online.
+
+\textbf{Note:} The syntax for calling these environments is slightly different from the usual \texttt{amsthm} package, so please take a look at \texttt{sample-section.tex} before using it.  
+
+\begin{definition}{Barney \& Friends}{}
+Barney \& Friends is an American children's television series aimed at children from ages 1 to 8, created by Sheryl Leach and produced by HIT Entertainment. It premiered on PBS on April 6, 1992. The series features the title character Barney, a purple anthropomorphic Tyrannosaurus rex who conveys educational messages through songs and small dance routines with a friendly, optimistic attitude.
+\end{definition}
+
+The above definition was taken from. Wikipedia.  
+
+\begin{proposition}{Barney is Purple}{}
+Barney is a purple dinosaur. 
+\end{proposition}
+\begin{proof}
+Left as an exercise to the reader. 
+\end{proof}
+ 
+ 
+\begin{lemma}{}{}
+Dinosaurs are extinct. 
+\end{lemma}
+
+\begin{corollary}{}{}
+Sample corollary, I've run out of Barney jokes. 
+\end{corollary}
+
+\begin{example}{}{}
+\begin{enumerate}
+  \item Example 1. 
+  \item Example 2. 
+\end{enumerate}
+\end{example}
+
+
+\begin{theorem}{}{}
+Hope this template is of help to you! 
+\end{theorem}
+ 
+\end{document}

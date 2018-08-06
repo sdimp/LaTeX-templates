@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {0}Hello!}{3}{section.0}
+\contentsline {part}{I\hspace {1em}Sample Part}{4}{part.1}
+\contentsline {section}{\numberline {1}Sample Section}{5}{section.1}
+\contentsline {subsection}{\numberline {1.1}Sample Math Environments}{5}{subsection.1.1}
