@@ -1,7 +1,4 @@
-\documentclass[10.5pt]{article}
-
-%%% DOCUMENT PROPERTIES
-\usepackage[margin = 1.5in]{geometry}
+\documentclass[10.5pt]{article} 
 
 %%% PACKAGES
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd,mathrsfs,mathtools}	
@@ -17,7 +14,14 @@
 \usepackage{tcolorbox}
 \usepackage{tikz, tikz-cd}
 \usepackage{hyperref}
+\usepackage[backend=biber, style=alphabetic, citestyle=alphabetic-verb]{biblatex} 
 \usepackage{mathdots}
+\usepackage[bold]{complexity}
+
+%%% DOCUMENT PROPERTIES
+\usepackage[margin = 1.5in]{geometry}
+\setlength{\parindent}{0pt}
+\setlength\bibitemsep{0.5\baselineskip} 
 
 % HYPERLINK SETUP
 \hypersetup{colorlinks = true, 
@@ -62,6 +66,13 @@ pdfauthor={Shiv Nadimpalli}}
 \newenvironment{solution}
   {\begin{proof}[Solution]}
   {\end{proof}}
+
+
+% FONT
+\urlstyle{sf}
+
+\RequirePackage[semibold]{libertine}
+\RequirePackage[libertine,cmintegrals,cmbraces]{newtxmath}
 
 
 %%% NEW COMMANDS
