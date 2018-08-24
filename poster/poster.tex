@@ -1,0 +1,212 @@
+\documentclass[final]{beamer}
+
+\usepackage[scale=1.24]{beamerposter}
+\usepackage{lipsum}
+
+%-----------------------------------------------------------
+% Geometry
+%-----------------------------------------------------------
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\newlength{\onehalf}
+\setlength{\paperwidth}{48in}
+\setlength{\paperheight}{36in}
+\setlength{\sepwid}{0.024\paperwidth}
+\setlength{\onecolwid}{0.22\paperwidth}
+\setlength{\twocolwid}{0.464\paperwidth}
+\setlength{\threecolwid}{0.708\paperwidth}
+\setlength{\onehalf}{0.342\paperwidth}
+\setlength{\topmargin}{-1in}
+\usetheme{confposter}
+\usepackage{exscale}
+
+\setlength{\arrayrulewidth}{2pt}
+
+\usecaptiontemplate{
+\small
+\structure{\insertcaptionname~\insertcaptionnumber:}
+\insertcaption}
+
+%-----------------------------------------------------------
+% Define colours (see beamerthemeconfposter.sty to change these colour definitions)
+%-----------------------------------------------------------
+
+\setbeamercolor{block title}{fg=black,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+\setbeamercolor{block alerted title}{fg=white,bg=brownuni}
+\setbeamercolor{block alerted body}{fg=black,bg=gray!20}
+
+%-----------------------------------------------------------
+% Set up the font for the poster
+%-----------------------------------------------------------
+
+
+%-----------------------------------------------------------
+% Name and authors of poster/paper/research
+%-----------------------------------------------------------
+
+\title{\textbf{Unnecessarily complicated title}}
+\author{Name}
+\institute{Name of department}
+
+%-----------------------------------------------------------
+% Start the poster itself
+%-----------------------------------------------------------
+
+\begin{document}
+\begin{frame}[t]
+\begin{columns}[t]	
+
+% For padding.		     
+\begin{column}{\sepwid}\end{column}	
+
+% Column 1. 		
+\begin{column}{\onecolwid}
+\vspace{2.5em}
+% Block 1. 
+\begin{alertblock}{Abstract}
+
+\lipsum[15]
+
+\end{alertblock}
+
+\vskip2ex
+
+% Block 2. 
+\begin{block}{Why should you care?}
+
+\lipsum[50]
+\lipsum[20]
+
+\end{block}
+
+
+\end{column}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% For padding.
+\begin{column}{\sepwid}\end{column}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Create 3-column wide column, will split it up later.		
+\begin{column}{\threecolwid}		
+
+% Split top block into two columns
+\begin{columns}[t,totalwidth=2\onehalf]	% split up that three-column-wide column into two
+
+% Left column of top block
+\begin{column}{\onehalf}
+
+\begin{block}{Model}
+
+\lipsum[66]
+
+\lipsum[5]
+
+\end{block}
+
+
+
+
+
+
+\end{column}
+
+%%% 
+\begin{column}{\sepwid} \vrule \end{column}	
+%%%
+
+% Right column of top block 
+\begin{column}{\onehalf}
+
+\begin{block}{Results}
+
+\lipsum[66]
+
+\lipsum[5]
+	
+\end{block}
+
+
+
+
+
+
+
+	
+	    
+\end{column}
+ 
+\end{columns}
+
+\vspace{1cm}
+%%%%%
+%%%%%
+
+% Bottom block
+
+% Split top block into two columns
+\begin{columns}[t,totalwidth=2\onehalf]	% split up that three-column-wide column into two
+
+% Left column of top block
+\begin{column}{\onehalf}
+
+\begin{block}{More stuff}
+
+
+	
+\end{block}
+
+
+
+
+
+
+\end{column}
+
+%%% 
+\begin{column}{\sepwid} \vrule \end{column}	
+%%%
+
+% Right column of top block 
+\begin{column}{\onehalf}
+
+
+\begin{block}{Who built this template?}
+This template was made by Shivam Nadimpalli by patching together several other Beamer templates available online. He is completely aware of how messy/hacky all his \TeX\ is. Please email any comments/questions to \href{mailto:nadimpalli@brown.edu}{\texttt{nadimpalli@brown.edu}}.
+\end{block}
+
+\begin{alertblock}{Future Directions}
+I really ought to fix a lot of stuff with this. 
+\end{alertblock}
+
+
+\begin{block}{References}
+
+\end{block}
+
+
+
+
+
+
+
+	
+	    
+\end{column}
+\end{columns}
+
+\end{column}
+
+
+
+%%% padding right side
+\begin{column}{\sepwid}\end{column}		
+%%%
+
+\end{columns}
+\end{frame}
+\end{document}
